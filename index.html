@@ -3,19 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>张兴安先生 35 岁生日祝福</title>
+    <title>张兴安先生 35 岁生日快乐！</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f0e68c, #ffd700); /* 暖色渐变背景 */
+            color: #333;
+            text-align: center;
+            overflow: hidden; /* 防止气球溢出 */
+            position: relative;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 1.5s ease-out;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            color: #e44d26; /* 喜庆的颜色 */
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #3f51b5; /* 蓝色点缀 */
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        #blessingMessage {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+            white-space: pre-wrap; /* 保留文本中的换行符 */
+        }
+
+        .details {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        /* 气球动画 */
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background-color: rgba(255, 69, 0, 0.7); /* 橙红色 */
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: inset -5px -5px 5px rgba(0,0,0,0.2);
+            animation: floatUp 10s ease-in-out infinite alternate;
+            opacity: 0.8;
+            z-index: 1; /* 确保在背景和容器之间 */
+        }
+        .balloon:nth-child(2) { background-color: rgba(0, 191, 255, 0.7); left: 15%; animation-delay: 2s; width: 70px; height: 90px; }
+        .balloon:nth-child(3) { background-color: rgba(147, 112, 219, 0.7); right: 20%; animation-delay: 4s; width: 50px; height: 70px; }
+        .balloon:nth-child(4) { background-color: rgba(60, 179, 113, 0.7); left: 25%; animation-delay: 6s; width: 80px; height: 100px; }
+        .balloon:nth-child(5) { background-color: rgba(255, 20, 147, 0.7); right: 10%; animation-delay: 8s; width: 65px; height: 85px; }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 0.7; }
+            50% { transform: translateY(-50px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.7; }
+        }
+    </style>
 </head>
 <body>
+    <div class="balloon" style="top: 10%; left: 5%;"></div>
+    <div class="balloon" style="top: 30%; right: 5%;"></div>
+    <div class="balloon" style="bottom: 10%; left: 10%;"></div>
+    <div class="balloon" style="top: 50%; left: 15%;"></div>
+    <div class="balloon" style="bottom: 5%; right: 15%;"></div>
 
-    <header>
-        <h1>生日快乐！🎂</h1>
-    </header>
-    
-    <div id="birthdayMessage">
-        正在加载来自 Gemini 的生日祝福...
+    <div class="container">
+        <h1>🎉 生日快乐！ 🎉</h1>
+        <h2 id="nameAndAge"></h2>
+        <p id="blessingMessage">正在加载祝福信息...</p>
+        <div class="details">
+            <p>日期：<span id="currentDate"></span></p>
+            <p>送上最诚挚的祝福！</p>
+        </div>
     </div>
 
     <script src="index.js"></script> 
-    
 </body>
 </html>
